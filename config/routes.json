@@ -1,0 +1,174 @@
+{
+    "Controllers": {
+        "service": "api",
+        "route": "api",
+        "description": "This is the starting point for the api route",
+        "releases": [{
+                "version_major": "1",
+                "version_minor": "0",
+                "description": "This is release v1.0 of the api",
+                "routes": [{
+                        "name": "getUserInformation",
+                        "area": "user",
+                        "action": "get",
+                        "parameter": [
+                            "([0-9]{1,3})"
+                        ],
+                        "description": "Get the user information based on the user ID",
+                        "example": "api/v1.0/user/get/123 where 123 is the user's ID"
+                    },
+                    {
+                        "name": "addUser",
+                        "area": "user",
+                        "action": "add",
+                        "parameter": [],
+                        "description": "Add a new user",
+                        "example": "api/v1.0/user/add this is the URI where the data is posted to"
+                    },
+                    {
+                        "name": "delUser",
+                        "area": "user",
+                        "action": "delete",
+                        "parameter": [
+                            "([0-9]{1,3})"
+                        ],
+                        "description": "Delete the user based on the user ID",
+                        "example": "api/v1.0/user/del/123 where 123 is the user's ID"
+                    }, {
+                        "name": "updateUserInformation",
+                        "area": "user",
+                        "action": "update",
+                        "parameter": [
+                            "([0-9]{1,3})"
+                        ],
+                        "description": "Update the user's information based on the user's ID",
+                        "example": "api/v1.0/user/update/123 where 123 is the user's ID"
+                    }, {
+                        "name": "getGroupsInformation",
+                        "area": "groups",
+                        "action": "get",
+                        "parameter": [],
+                        "description": "Get the list of groups",
+                        "example": "api/v1.0/groups/get "
+                    }, {
+                        "name": "getUsersInformation",
+                        "area": "users",
+                        "action": "get",
+                        "parameter": [],
+                        "description": "Get the list of users",
+                        "example": "api/v1.0/users/get "
+                    }, {
+                        "name": "getGroupInformation",
+                        "area": "group",
+                        "action": "get",
+                        "parameter": [
+                            "([0-9]{1,3})"
+                        ],
+                        "description": "Get the group information based on the group ID",
+                        "example": "api/v1.0/group/get/123 where 123 is the group's ID"
+                    }, {
+                        "name": "getDomainsInformation",
+                        "area": "domains",
+                        "action": "get",
+                        "parameter": [],
+                        "description": "Get the list of domains",
+                        "example": "api/v1.0/domains/get "
+                    }, {
+                        "name": "getRecordInformation",
+                        "area": "record",
+                        "action": "get",
+                        "parameter": [
+                            "([0-9]{1,3})"
+                        ],
+                        "description": "Get the record information based on the record ID",
+                        "example": "api/v1.0/record/get/123 where 123 is the record's ID"
+                    }, {
+                        "name": "getRadPostAuthInformation",
+                        "area": "postauth",
+                        "action": "get",
+                        "parameter": [
+                            "([a-z0-9]{1,64})"
+                        ],
+                        "description": "Get the postauth information based on the postauth ID",
+                        "example": "api/v1.0/postauth/get/123 where 123 is the postauth's ID"
+                    }, {
+                        "name": "getRecordDomainTypeInformation",
+                        "area": "recorddomaintype",
+                        "action": "get",
+                        "parameter": [
+                            "([0-9]{1,3})", 
+                            "([a-z0-9]{1,10})"
+                        ],
+                        "description": "Get the record information based on the domain ID and Type",
+                        "example": "api/v1.0/postauth/get/123/aaa where 123 is the domain's ID and aaa is the type"
+                    }
+                ],
+                "changelog": [{
+                        "date": "2017-06-03",
+                        "author": "ThatOneNeji",
+                        "changes": [
+                            "AAAAA", 
+                            "bbbbb",
+                            "ccccc", 
+                            "ddddd"
+                        ]
+                    }
+                ]
+            },
+            {
+                "version_major": "1",
+                "version_minor": "1",
+                "description": "This is release v1.0 of the api",
+                "routes": [{
+                        "name": "getUserInformation",
+                        "area": "user",
+                        "action": "get",
+                        "parameter": [
+                            "([0-9]{1,3})"
+                        ],
+                        "description": "Get the user information based on the user ID",
+                        "example": "api/v1.0/user/get/123 where 123 is the user's ID"
+                    },
+                    {
+                        "name": "addUser",
+                        "area": "user",
+                        "action": "add",
+                        "parameter": [],
+                        "description": "Add a new user",
+                        "example": "api/v1.0/user/add this is the URI where the data is posted to"
+                    },
+                    {
+                        "name": "delUser",
+                        "area": "user",
+                        "action": "del",
+                        "parameter": [
+                            "([0-9]{1,3})"
+                        ],
+                        "description": "Delete the user based on the user ID",
+                        "example": "api/v1.0/user/del/123 where 123 is the user's ID"
+                    }, {
+                        "name": "updateUserInformation",
+                        "area": "user",
+                        "action": "update",
+                        "parameter": [
+                            "([0-9]{1,3})"
+                        ],
+                        "description": "Update the user's information based on the user's ID",
+                        "example": "api/v1.0/user/update/123 where 123 is the user's ID"
+                    }
+                ],
+                "changelog": [{
+                        "date": "2017-06-13",
+                        "author": "ThatOneNeji",
+                        "changes": [
+                            "11111", 
+                            "22222", 
+                            "33333", 
+                            "44444"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

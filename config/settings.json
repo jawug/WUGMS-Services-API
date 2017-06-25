@@ -1,0 +1,22 @@
+{
+    "application": {
+        "baseurl": "http://api.jawug.org.za",
+        "baseurlinternal": "http://api.jawug.org.za",
+        "homeURL": "api.jawug.org.za",
+        "longname": "WUGMS-Services-API",
+        "shortname": "wugms_services_api",
+        "adminemail": "api@jawug.org.za",
+        "sitetitle": "WUGMS-Services-API"
+    },
+    "DBVO": {
+        "username": "rad",
+        "password": "rad",
+        "schema": "radius",
+        "host": "localhost",
+        "port": 3306
+    },
+    "MiscVO": {
+        "php_min": "7.0.0",
+        "php_max": "7.3.0"
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "authors": [{
+            "name": "s1lv3r9",
+            "email": "s1lv3rm4st@gmail.com",
+            "role": "Developer"
+        },
+        {
+            "name": "ThatOneNeji",
+            "email": "dev.duncane@gmail.com",
+            "homepage": "https://www.bwcsystem.net",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "~5.2",
+        "dapphp/radius": "~2.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "6.0"
+    }
+}
