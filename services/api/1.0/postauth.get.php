@@ -64,8 +64,6 @@ if ($page_data->PageActions->getStatus()) {
 $page_data->LogEntry((($page_data->PageActions->getStatus()) ? 1 : 3));
 $json_response = json_encode($page_data->PageData->PageWebStatus->getAPIResponse(), JSON_NUMERIC_CHECK);
 
-/* Auditing/logging */
-$page_data->page_metric->page_metric($ServerArray, $_SESSION, $page_data->PageActions, session_id(), $page_data->PageData->getPageInfo());
 /* Deliver results */
 header('HTTP/1.1 ' . $page_data->PageData->PageWebStatus->getAPIResponseStatus() . ' ' . $page_data->PageData->PageWebStatus->getHTTPResponseCode());
 header('Content-Type: application/json; charset=utf-8');
