@@ -133,7 +133,7 @@ class entity_validation {
     }
 
     function validateStringNotEmpty($value) {
-        if (!empty($value)) {
+        if (empty($value)) {
             throw new Exception('String is empty');
         }
         return $value;

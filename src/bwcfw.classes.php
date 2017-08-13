@@ -261,7 +261,8 @@ class BWCFWDecoratorPattern {
      */
     function __construct() {
         date_default_timezone_set('Africa/Johannesburg');
-        $this->server_base = filter_input(INPUT_SERVER, 'DOCUMENT_ROOT');
+        //$this->server_base = filter_input(INPUT_SERVER, 'DOCUMENT_ROOT');
+        $this->server_base = __DIR__;
         $this->log_path = $this->server_base . "/../logging/";
         $this->config_path = $this->server_base . "/../config/";
         $this->footer_copy = "&copy; " . $this->getLongName() . " " . date("Y");
@@ -465,7 +466,7 @@ class LoggingService extends BWCFWDecoratorPattern {
      */
     public function __construct($fn = FALSE, $isSystemLevel = FALSE, $isEnableDAO = TRUE) {
         parent::__construct();
-        require_once('log4php/Logger.php');
+        require_once('../vendor/log4php/Logger.php');
         Logger::configure(array(
             'rootLogger' => array(
                 'appenders' => array('default'),
@@ -532,8 +533,6 @@ final class Email {
 /*  test   */
 
 include_once 'bwcfw.classes.valueobjects.php';
-include_once 'bwcfw.classes.entity.audit.php';
-include_once 'bwcfw.classes.entity.metrics.php';
 include_once 'bwcfw.classes.entity.validation.php';
 include_once 'bwcfw.classes.service.dao.php';
 include_once 'bwcfw.classes.service.util.php';
