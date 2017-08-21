@@ -67,7 +67,7 @@ final class entity_validationTest extends TestCase {
 
     public function testInvalidateNumberBTV(): void {
         $this->expectException(Exception::class);
-        (new entity_validation())->validateStringLength(5, 10, 20);
+        (new entity_validation())->validateNumberBTV(5, 10, 20);
     }
 
     //StartDateLTTEndDate

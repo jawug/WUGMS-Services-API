@@ -17,7 +17,7 @@ class ValidationVO {
      * 
      * @return String Regex
      */
-    function getRegexGenericName() {
+    public function getRegexGenericName() {
         return $this->RegexGenericName;
     }
 
@@ -25,7 +25,7 @@ class ValidationVO {
      * 
      * @return String Regex
      */
-    function getRegexPassword() {
+    public function getRegexPassword() {
         return $this->RegexPassword;
     }
 
@@ -33,7 +33,7 @@ class ValidationVO {
      * 
      * @return String Regex
      */
-    function getRegexDateFormat() {
+    public function getRegexDateFormat() {
         return $this->RegexDateFormat;
     }
 
@@ -41,7 +41,7 @@ class ValidationVO {
      * 
      * @return String Returns the generic name regex of '/^[A-Za-z0-9()\s]+$/i'
      */
-    function getRegexDefaultNameFormat() {
+    public function getRegexDefaultNameFormat() {
         return $this->RegexDefaultNameFormat;
     }
 
@@ -49,7 +49,7 @@ class ValidationVO {
      * 
      * @return String Returns the generic HEX colour checker '/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/'
      */
-    function getRegexHexColourFormat() {
+    public function getRegexHexColourFormat() {
         return $this->RegexHexColourFormat;
     }
 
@@ -57,7 +57,7 @@ class ValidationVO {
      * 
      * @return String Returns the expression for check the Ticket Header '/^.{10,100}$/i'
      */
-    function getRegexTicketHeader() {
+    public function getRegexTicketHeader() {
         return $this->RegexTicketHeader;
     }
 
@@ -65,7 +65,7 @@ class ValidationVO {
      * 
      * @return String Returns the expression to check the ticket Description '/^.{10,4000}$/i'
      */
-    function getRegexTicketDescription() {
+    public function getRegexTicketDescription() {
         return $this->RegexTicketDescription;
     }
 
@@ -73,7 +73,7 @@ class ValidationVO {
      * 
      * @return String Returns the expression to check the PostAuth Username '/^([a-z0-9]{1,64})$/i'
      */
-    function getRegexPostAuthUserName() {
+    public function getRegexPostAuthUserName() {
         return $this->RegexPostAuthUserName;
     }
 
@@ -81,7 +81,7 @@ class ValidationVO {
      * 
      * @return String Returns the expression to check the Domain Type '/^([a-z0-9]{1,10})$/i'
      */
-    function getRegexDomainType() {
+    public function getRegexDomainType() {
         return $this->RegexDomainType;
     }
 
@@ -89,7 +89,7 @@ class ValidationVO {
      * 
      * @return String Returns the expression to check the RadCheck OP Type '/^(\:\=|\=\=)$/i'
      */
-    function getRegexRadCheckOP() {
+    public function getRegexRadCheckOP() {
         return $this->RegexRadCheckOP;
     }
 
@@ -109,7 +109,7 @@ class entity_validation {
      * @return datetime
      * @throws Exception
      */
-    function validateDate($date) {
+    public function validateDate($date) {
         if (!preg_match($this->DateRegex, $date)) {
             throw new Exception('Date is wrong format');
         }
@@ -122,14 +122,14 @@ class entity_validation {
      * @return type boolean
      * @throws Exception
      */
-    function validateCheckNumeric($value) {
+    public function validateCheckNumeric($value) {
         if (!is_numeric($value)) {
             throw new Exception('Value is not numeric');
         }
         return $value;
     }
 
-    function validateStringNotEmpty($value) {
+    public function validateStringNotEmpty($value) {
         if (empty($value)) {
             throw new Exception('String is empty');
         }
@@ -143,7 +143,7 @@ class entity_validation {
      * @return string
      * @throws Exception
      */
-    function validateStringLength($value, $length) {
+    public function validateStringLength($value, $length) {
         if ((strlen($value) > $length) || (strlen($value) < $length)) {
             throw new Exception('Value is incorrect length');
         }
@@ -158,7 +158,7 @@ class entity_validation {
      * @return boolean
      * @throws Exception
      */
-    function validateNumberBTV($number, $min, $max) {
+    public function validateNumberBTV($number, $min, $max) {
         if ($number >= $min && $number <= $max) {
             return TRUE;
         } else {
@@ -174,7 +174,7 @@ class entity_validation {
      * @return boolean
      * @throws Exception
      */
-    function StartDateLTTEndDate($startdate, $enddate) {
+    public function StartDateLTTEndDate($startdate, $enddate) {
         if ($startdate > $enddate) {
             throw new Exception('Start Date greater than End Date');
         }
@@ -188,14 +188,14 @@ class entity_validation {
      * @return type
      * @throws Exception
      */
-    function validateStringRegex($value, $regex) {
+    public function validateStringRegex($value, $regex) {
         if (!preg_match($regex, $value)) {
             throw new Exception('String value does not match Regex: ' . $regex);
         }
         return $value;
     }
 
-    function validateStringLengthMinMax($value, $min, $max) {
+    public function validateStringLengthMinMax($value, $min, $max) {
         $i = strlen($value);
         if ($i < $min || $i > $max) {
             throw new Exception('String value does not meet min/max requirements');
@@ -210,7 +210,7 @@ class entity_validation {
      * @return boolean
      * @throws Exception
      */
-    function validateStringUnique($first, $second) {
+    public function validateStringUnique($first, $second) {
         if (strtoupper($first) === strtoupper($second)) {
             throw new Exception('Values are the same');
         }
@@ -224,7 +224,7 @@ class entity_validation {
      * @return boolean
      * @throws Exception
      */
-    function validateStringSame($first, $second) {
+    public function validateStringSame($first, $second) {
         if (strtoupper($first) !== strtoupper($second)) {
             throw new Exception('Values are not the same');
         }
@@ -237,7 +237,7 @@ class entity_validation {
      * @return type
      * @throws Exception
      */
-    function validateEmail($email) {
+    public function validateEmail($email) {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             throw new Exception('String value is not valid email');
         }
@@ -250,7 +250,7 @@ class entity_validation {
      */
     var $expressions;
 
-    function __construct() {
+    public function __construct() {
         $this->expressions = new ValidationVO();
     }
 
