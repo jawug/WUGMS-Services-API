@@ -110,9 +110,6 @@ class entity_validation {
      * @throws Exception
      */
     function validateDate($date) {
-        if (!$date) {
-            throw new Exception('Date is blank');
-        }
         if (!preg_match($this->DateRegex, $date)) {
             throw new Exception('Date is wrong format');
         }

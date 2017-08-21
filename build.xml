@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="wugms" default="full-build">
+<project name="WUGMS-Services-API" default="full-build">
     <!-- By default, we assume all tools to be on the $PATH -->
     <property name="pdepend" value="pdepend"/> 
     <property name="phpcpd"  value="phpcpd"/>
@@ -27,12 +27,12 @@
     <property name="phpmd"   value="${basedir}/vendor/bin/phpmd"/>
     <property name="phpunit" value="${basedir}/vendor/bin/phpunit"/> -->
     <target name="full-build"
-               depends="prepare,static-analysis,phpunit,phpdox,-check-failure"
-               description="Performs static analysis, runs the tests, and generates project documentation"/>
-    <!-- 
-        <target name="full-build"
-                    depends="prepare,phpunit,-check-failure"
-                    description="Performs static analysis, runs the tests, and generates project documentation"/>
+             depends="prepare,static-analysis,phpunit,phpdox,-check-failure"
+             description="Performs static analysis, runs the tests, and generates project documentation"/>
+    <!--
+    <target name="full-build"
+                depends="prepare,phpunit,-check-failure"
+                description="Performs static analysis, runs the tests, and generates project documentation"/>
     -->
     <target name="full-build-parallel"
             depends="prepare,static-analysis-parallel,phpunit,phpdox,-check-failure"

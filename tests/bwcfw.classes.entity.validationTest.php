@@ -47,7 +47,7 @@ final class entity_validationTest extends TestCase {
     }
 
 //validateStringLength
-    public function testvalidateStringLength(): void {
+    public function testValidateStringLength(): void {
         $this->assertEquals(
                 'abcd', (new entity_validation())->validateStringLength('abcd', 4)
         );
@@ -56,6 +56,90 @@ final class entity_validationTest extends TestCase {
     public function testInvalidateStringLength(): void {
         $this->expectException(Exception::class);
         (new entity_validation())->validateStringLength('abcd', 3);
+    }
+
+//validateNumberBTV
+    public function testValidateNumberBTV(): void {
+        $this->assertEquals(
+                TRUE, (new entity_validation())->validateNumberBTV(5, 1, 10)
+        );
+    }
+
+    public function testInvalidateNumberBTV(): void {
+        $this->expectException(Exception::class);
+        (new entity_validation())->validateStringLength(5, 10, 20);
+    }
+
+    //StartDateLTTEndDate
+    public function testStartDateLTTEndDate(): void {
+        $this->assertEquals(
+                TRUE, (new entity_validation())->StartDateLTTEndDate('2017-08-20', '2017-08-21')
+        );
+    }
+
+    public function testInvalidateStartDateLTTEndDate(): void {
+        $this->expectException(Exception::class);
+        (new entity_validation())->StartDateLTTEndDate('2017-08-21', '2017-08-20');
+    }
+
+//    validateStringRegex
+    public function testValidateStringRegex(): void {
+        $this->assertEquals(
+                'abcd abcd abcd', (new entity_validation())->validateStringRegex('abcd abcd abcd', '/^.{10,100}$/i')
+        );
+    }
+
+    public function testInvalidateStringRegex(): void {
+        $this->expectException(Exception::class);
+        (new entity_validation())->validateStringRegex('abcd', '/^.{10,100}$/i');
+    }
+
+    //    validateStringLengthMinMax
+    public function testValidateStringLengthMinMax(): void {
+        $this->assertEquals(
+                'abcdabcd', (new entity_validation())->validateStringLengthMinMax('abcdabcd', 5, 10)
+        );
+    }
+
+    public function testInvalidateStringLengthMinMax(): void {
+        $this->expectException(Exception::class);
+        (new entity_validation())->validateStringLengthMinMax('abcd', 5, 10);
+    }
+
+    //    validateStringUnique
+    public function testValidateStringUnique(): void {
+        $this->assertEquals(
+                TRUE, (new entity_validation())->validateStringUnique('abcdabcd', 'abcd')
+        );
+    }
+
+    public function testInvalidateStringUnique(): void {
+        $this->expectException(Exception::class);
+        (new entity_validation())->validateStringUnique('abcdabcd', 'abcdabcd');
+    }
+
+    //    validateStringSame
+    public function testValidateStringSame(): void {
+        $this->assertEquals(
+                TRUE, (new entity_validation())->validateStringSame('abcdabcd', 'abcdabcd')
+        );
+    }
+
+    public function testInvalidateStringSame(): void {
+        $this->expectException(Exception::class);
+        (new entity_validation())->validateStringSame('abc', 'xyz');
+    }
+
+    //    validateEmail
+    public function testValidateEmail(): void {
+        $this->assertEquals(
+                'address@somewhere.com', (new entity_validation())->validateEmail('address@somewhere.com')
+        );
+    }
+
+    public function testInvalidateEmail(): void {
+        $this->expectException(Exception::class);
+        (new entity_validation())->validateEmail('abc');
     }
 
 }

@@ -77,10 +77,7 @@ class StatusVO {
         return $this->Line;
     }
 
-    /**
-     * 
-     */
-    function __construct() {
+    public function __construct() {
         $this->Status = true;
         $this->StatusCode = "N/A";
         $this->ExtendedStatusCode = "N/A";
@@ -129,7 +126,7 @@ class FileRecordVO {
 
     /**
      *
-     * @var string The min  
+     * @var string The min
      */
     private $level;
 

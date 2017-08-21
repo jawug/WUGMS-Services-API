@@ -261,8 +261,14 @@ class BWCFWDecoratorPattern {
      */
     function __construct() {
         date_default_timezone_set('Africa/Johannesburg');
-        //$this->server_base = filter_input(INPUT_SERVER, 'DOCUMENT_ROOT');
-        $this->server_base = __DIR__;
+        $server_base = filter_input(INPUT_SERVER, 'DOCUMENT_ROOT');
+        var_dump($server_base);
+        echo PHP_EOL;
+        if ($server_base) {
+            $this->server_base = $server_base;
+        } else {
+            $this->server_base = __DIR__;
+        }
         $this->log_path = $this->server_base . "/../logging/";
         $this->config_path = $this->server_base . "/../config/";
         $this->footer_copy = "&copy; " . $this->getLongName() . " " . date("Y");
@@ -497,40 +503,6 @@ class LoggingService extends BWCFWDecoratorPattern {
     }
 
 }
-
-/*  test   */
-
-final class Email {
-
-    private $email;
-
-    private function __construct(string $email) {
-        $this->ensureIsValidEmail($email);
-
-        $this->email = $email;
-    }
-
-    public static function fromString(string $email): self {
-        return new self($email);
-    }
-
-    public function __toString(): string {
-        return $this->email;
-    }
-
-    private function ensureIsValidEmail(string $email): void {
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            throw new InvalidArgumentException(
-            sprintf(
-                    '"%s" is not a valid email address', $email
-            )
-            );
-        }
-    }
-
-}
-
-/*  test   */
 
 include_once 'bwcfw.classes.valueobjects.php';
 include_once 'bwcfw.classes.entity.validation.php';
