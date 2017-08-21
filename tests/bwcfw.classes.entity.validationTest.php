@@ -139,7 +139,7 @@ final class entity_validationTest extends TestCase {
 
     public function testInvalidateEmail(): void {
         $this->expectException(Exception::class);
-        (new entity_validation())->validateEmail('abc');
+        (new entity_validation())->validateEmail('abcd');
     }
 
 }

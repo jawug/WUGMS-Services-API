@@ -14,7 +14,7 @@ class ValidationVO {
     private $RegexRadCheckOP = '/^(\:\=|\=\=)$/i';
 
     /**
-     * 
+     *
      * @return String Regex
      */
     public function getRegexGenericName() {

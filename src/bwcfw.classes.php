@@ -389,7 +389,7 @@ class DBVO {
         $this->charset = $charset;
     }
 
-    function __construct() {
+    public function __construct() {
         $this->server_base = filter_input(INPUT_SERVER, 'DOCUMENT_ROOT');
         $this->config_path = $this->server_base . "/../config/";
         $string = file_get_contents($this->config_path . "settings.json");
