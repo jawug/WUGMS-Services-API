@@ -3,13 +3,15 @@
 /**
  * Status Value Object
  */
-class StatusVO {
+class StatusVO
+{
 
     /**
      * This function evaluates the variable @Status and returns a simple value
      * @return string 
      */
-    public function getStatusStr() {
+    public function getStatusStr()
+    {
         return ($this->Status) ? "ok" : "error";
     }
 
@@ -17,7 +19,8 @@ class StatusVO {
      * 
      * @param boolean $Status This indicates if there is a problem or not
      */
-    public function setStatus($Status) {
+    public function setStatus($Status)
+    {
         $this->Status = $Status;
     }
 
@@ -25,7 +28,8 @@ class StatusVO {
      * 
      * @return boolean This indicates if there is a problem or not
      */
-    public function getStatus() {
+    public function getStatus()
+    {
         return $this->Status;
     }
 
@@ -33,7 +37,8 @@ class StatusVO {
      * 
      * @param string $StatusCode This provides a more detailed status of what went wrong
      */
-    public function setStatusCode($StatusCode) {
+    public function setStatusCode($StatusCode)
+    {
         $this->StatusCode = $StatusCode;
     }
 
@@ -41,7 +46,8 @@ class StatusVO {
      * 
      * @return string This provides a more detailed status of what went wrong
      */
-    public function getStatusCode() {
+    public function getStatusCode()
+    {
         return $this->StatusCode;
     }
 
@@ -49,7 +55,8 @@ class StatusVO {
      * 
      * @param string $ExtendedStatusCode This provides a more detailed status of what went wrong
      */
-    public function setExtendedStatusCode($ExtendedStatusCode) {
+    public function setExtendedStatusCode($ExtendedStatusCode)
+    {
         $this->ExtendedStatusCode = $ExtendedStatusCode;
     }
 
@@ -57,7 +64,8 @@ class StatusVO {
      * 
      * @return string This provides a more detailed status of what went wrong
      */
-    public function getExtendedStatusCode() {
+    public function getExtendedStatusCode()
+    {
         return $this->ExtendedStatusCode;
     }
 
@@ -65,7 +73,8 @@ class StatusVO {
      * 
      * @param string $Line This indicates the line where the error occured
      */
-    public function setLine($Line) {
+    public function setLine($Line)
+    {
         $this->Line = $Line;
     }
 
@@ -73,20 +82,22 @@ class StatusVO {
      * 
      * @return string This indicates the line where the error occured
      */
-    public function getLine() {
+    public function getLine()
+    {
         return $this->Line;
     }
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->Status = true;
         $this->StatusCode = "N/A";
         $this->ExtendedStatusCode = "N/A";
         $this->Line = "N/A";
     }
-
 }
 
-class FileRecordVO {
+class FileRecordVO
+{
 
     /**
      *
@@ -182,7 +193,8 @@ class FileRecordVO {
      * 
      * @param string $name This sets the internal variable
      */
-    function setName($name) {
+    function setName($name)
+    {
         $this->filename = basename($name);
         $this->filepath = dirname($name);
         $this->fileext = pathinfo($name, PATHINFO_EXTENSION);
@@ -193,7 +205,8 @@ class FileRecordVO {
      * 
      * @return string This gets the internal variable
      */
-    function getFileName() {
+    function getFileName()
+    {
         return $this->filename;
     }
 
@@ -201,7 +214,8 @@ class FileRecordVO {
      * 
      * @return string returns the path of the file
      */
-    function getFilePath() {
+    function getFilePath()
+    {
         return $this->filepath;
     }
 
@@ -209,7 +223,8 @@ class FileRecordVO {
      * 
      * @param string $role This sets the internal variable
      */
-    function setRolesRequired($role) {
+    function setRolesRequired($role)
+    {
         array_push($this->roles_required, $role);
     }
 
@@ -217,11 +232,13 @@ class FileRecordVO {
      * 
      * @return array This gets the internal variable
      */
-    function getRolesRequired() {
+    function getRolesRequired()
+    {
         return $this->roles_required;
     }
 
-    function setSystemLevel($systemlevel) {
+    function setSystemLevel($systemlevel)
+    {
         $this->issystemlevel = $systemlevel;
     }
 
@@ -230,7 +247,8 @@ class FileRecordVO {
      * @param string $systemlevel This would be the user's Company_id
      * @return boolean 
      */
-    function checkSystemLevel($systemlevel) {
+    function checkSystemLevel($systemlevel)
+    {
         if ($this->issystemlevel) {
             return ($systemlevel === '1') ? TRUE : FALSE;
         }
@@ -243,7 +261,8 @@ class FileRecordVO {
      * @param string $akey This optional parameter is in case the array been sent has sub keys
      * @return boolean True if the roles overlap, false if they do not
      */
-    function hasRoles($roles, $akey = null) {
+    function hasRoles($roles, $akey = null)
+    {
         if ($akey) {
             $tmp_array = array();
             foreach ($roles as $item) {
@@ -263,7 +282,8 @@ class FileRecordVO {
      * @param type $akey  This optional parameter is in case the array been sent has sub keys
      * @return boolean True if the role overlaps, false if it does not
      */
-    function hasRoleInArray($roles, $required_role, $akey = null) {
+    function hasRoleInArray($roles, $required_role, $akey = null)
+    {
         $req_role_array = array();
         array_push($req_role_array, trim($required_role));
         if ($akey) {
@@ -282,7 +302,8 @@ class FileRecordVO {
      * 
      * @param string $section This is the section of the application that is been used. 
      */
-    function setSection($section) {
+    function setSection($section)
+    {
         $this->section = $section;
     }
 
@@ -290,7 +311,8 @@ class FileRecordVO {
      * 
      * @return string
      */
-    function getSection() {
+    function getSection()
+    {
         return $this->section;
     }
 
@@ -298,7 +320,8 @@ class FileRecordVO {
      * 
      * @param string $level This sets the internal variable
      */
-    function setLevel($level) {
+    function setLevel($level)
+    {
         $this->level = $level;
     }
 
@@ -306,7 +329,8 @@ class FileRecordVO {
      * 
      * @return string This gets the internal variable
      */
-    function getParams() {
+    function getParams()
+    {
         return $this->params;
     }
 
@@ -314,7 +338,8 @@ class FileRecordVO {
      * 
      * @param string $params This sets the internal variable
      */
-    function setParams($params) {
+    function setParams($params)
+    {
         $this->params = $params;
     }
 
@@ -322,7 +347,8 @@ class FileRecordVO {
      * 
      * @return string This gets the internal variable
      */
-    function getLevel() {
+    function getLevel()
+    {
         return $this->level;
     }
 
@@ -330,7 +356,8 @@ class FileRecordVO {
      * 
      * @param string $area This sets the internal variable
      */
-    function setArea($area) {
+    function setArea($area)
+    {
         $this->area = $area;
     }
 
@@ -338,7 +365,8 @@ class FileRecordVO {
      * 
      * @return string This gets the internal variable
      */
-    function getType() {
+    function getType()
+    {
         return $this->type;
     }
 
@@ -346,7 +374,8 @@ class FileRecordVO {
      * 
      * @param string $type This sets the internal variable
      */
-    function setType($type) {
+    function setType($type)
+    {
         $this->type = $type;
     }
 
@@ -354,7 +383,8 @@ class FileRecordVO {
      * 
      * @return string This gets the internal variable
      */
-    function getArea() {
+    function getArea()
+    {
         return $this->area;
     }
 
@@ -362,7 +392,8 @@ class FileRecordVO {
      * 
      * @param string $action This sets the internal variable
      */
-    function setAction($action) {
+    function setAction($action)
+    {
         $this->action = $action;
     }
 
@@ -370,7 +401,8 @@ class FileRecordVO {
      * 
      * @return string This gets the internal variable
      */
-    function getAction() {
+    function getAction()
+    {
         return $this->action;
     }
 
@@ -378,7 +410,8 @@ class FileRecordVO {
      * 
      * @return string
      */
-    function getPageWebStatusDebugMsg() {
+    function getPageWebStatusDebugMsg()
+    {
         return '[' . $this->getFileName() . '] ' . 'Status: ' . $this->PageWebStatus->getAPIResponseStatus() . '; http_response_code: ' . $this->PageWebStatus->getHTTPResponseCode() . '; Status: ' . $this->PageWebStatus->getAPIResponseMessage() . '; Message: ' . $this->PageActions->StatusCode . '; Extended Status: ' . $this->PageActions->extended_StatusCode;
     }
 
@@ -386,7 +419,8 @@ class FileRecordVO {
      * 
      * @return type
      */
-    function getPageWebStatusInfoMsg() {
+    function getPageWebStatusInfoMsg()
+    {
         return $this->action;
     }
 
@@ -400,22 +434,26 @@ class FileRecordVO {
      * 
      * @return type
      */
-    function getClientIP() {
+    function getClientIP()
+    {
         return $this->ClientIP;
     }
 
     /**
      * 
      */
-    function setClientIP() {
+    function setClientIP()
+    {
         $this->ClientIP = getenv('REMOTE_ADDR');
     }
 
-    function setRoleRequired($role) {
+    function setRoleRequired($role)
+    {
         array_push($this->roles_required, trim(strtoupper($role)));
     }
 
-    private function packPageInfo() {
+    private function packPageInfo()
+    {
         $this->pageinfoarray = array("section" => $this->getSection(),
             "area" => $this->getArea(),
             "level" => $this->getLevel(),
@@ -428,11 +466,13 @@ class FileRecordVO {
      * 
      * @return array
      */
-    function getPageInfo() {
+    function getPageInfo()
+    {
         return $this->pageinfoarray;
     }
 
-    private function postPageAudit() {
+    private function postPageAudit()
+    {
         /* Build the URL */
         $query_string = 'username=' . urlencode($foo);
         $query_string .= '&uid=' . urlencode($uid);
@@ -465,7 +505,8 @@ class FileRecordVO {
         }
     }
 
-    function setFileRecord($fn = FALSE) {
+    function setFileRecord($fn = FALSE)
+    {
         if ($fn) {
             $this->setName($fn);
             $fnb = explode(".", $this->filenamebase);
@@ -490,7 +531,8 @@ class FileRecordVO {
     /**
      * 
      */
-    public function __construct($fn = FALSE, $isSystemLevel = FALSE) {
+    public function __construct($fn = FALSE, $isSystemLevel = FALSE)
+    {
         $this->PageWebStatus = new WebPageVO();
         $this->PageActions = new StatusVO();
         $this->setRoleRequired("admin");
@@ -498,10 +540,10 @@ class FileRecordVO {
         $this->setClientIP();
         $this->setFileRecord($fn);
     }
-
 }
 
-class WebPageVO {
+class WebPageVO
+{
 
     /**
      *
@@ -526,7 +568,8 @@ class WebPageVO {
      * 
      * @return type
      */
-    function getAPIStatusCode() {
+    function getAPIStatusCode()
+    {
         return $this->APIStatusCode;
     }
 
@@ -534,7 +577,8 @@ class WebPageVO {
      * 
      * @return type
      */
-    function getAPIStatusMsg() {
+    function getAPIStatusMsg()
+    {
         return $this->APIStatusMsg;
     }
 
@@ -542,7 +586,8 @@ class WebPageVO {
      * 
      * @return type
      */
-    function getAPIData() {
+    function getAPIData()
+    {
         return $this->APIData;
     }
 
@@ -550,7 +595,8 @@ class WebPageVO {
      * 
      * @return type
      */
-    function getAPIResponseCode($id) {
+    function getAPIResponseCode($id)
+    {
         return $this->APIResponseCode[$id];
     }
 
@@ -558,7 +604,8 @@ class WebPageVO {
      * 
      * @return type
      */
-    function getHTTPResponseCode() {
+    function getHTTPResponseCode()
+    {
         return $this->HTTPResponseCode;
     }
 
@@ -566,7 +613,8 @@ class WebPageVO {
      * 
      * @return type
      */
-    function getAPIResponse() {
+    function getAPIResponse()
+    {
         return $this->APIResponse;
     }
 
@@ -574,7 +622,8 @@ class WebPageVO {
      * 
      * @param type $APIStatusCode
      */
-    function setAPIStatusCode($APIStatusCode) {
+    function setAPIStatusCode($APIStatusCode)
+    {
         $this->APIStatusCode = $APIStatusCode;
     }
 
@@ -582,7 +631,8 @@ class WebPageVO {
      * 
      * @param type $HTTPResponseCode
      */
-    function setHTTPResponseCode($HTTPResponseCode) {
+    function setHTTPResponseCode($HTTPResponseCode)
+    {
         $this->HTTPResponseCode = $HTTPResponseCode;
     }
 
@@ -590,7 +640,8 @@ class WebPageVO {
      * 
      * @param integer $APIResponse
      */
-    function setAPIResponse($APIResponse = 1) {
+    function setAPIResponse($APIResponse = 1)
+    {
         $this->APIResponse['status'] = $this->APIResponseCode[$APIResponse]['HTTP Response'];
         $this->APIResponse['message'] = $this->APIResponseCode[$APIResponse]['Message'];
         $this->HTTPResponseCode = $this->HTTPResponseCodes[$this->APIResponse['status']];
@@ -609,7 +660,8 @@ class WebPageVO {
      * 
      * @return type
      */
-    function getAPIResponseStatus() {
+    function getAPIResponseStatus()
+    {
         return $this->APIResponse['status'];
     }
 
@@ -617,15 +669,18 @@ class WebPageVO {
      * 
      * @return type
      */
-    function getAPIResponseMessage() {
+    function getAPIResponseMessage()
+    {
         return $this->APIResponse['message'];
     }
 
-    function setAPIResponseData($data) {
+    function setAPIResponseData($data)
+    {
         $this->APIResponse['data'] = $data;
     }
 
-    function setAPIResponseFeedback($feedback) {
+    function setAPIResponseFeedback($feedback)
+    {
         $this->APIResponse['feedback'] = $feedback;
     }
 
@@ -633,14 +688,16 @@ class WebPageVO {
      * 
      * @return type
      */
-    function getAPIResponseData() {
+    function getAPIResponseData()
+    {
         return $this->APIResponse['data'];
     }
 
     /**
      * 
      */
-    function __construct() {
+    function __construct()
+    {
         $this->APIResponseCode = array(
             0 => array(
                 'HTTP Response' => 400,
@@ -710,5 +767,4 @@ class WebPageVO {
         );
         $this->setAPIResponse(1);
     }
-
 }

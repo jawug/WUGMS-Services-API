@@ -26,14 +26,14 @@
     <property name="phploc"  value="${basedir}/vendor/bin/phploc"/>
     <property name="phpmd"   value="${basedir}/vendor/bin/phpmd"/>
     <property name="phpunit" value="${basedir}/vendor/bin/phpunit"/> -->
-    <target name="full-build"
-             depends="prepare,static-analysis,phpunit,phpdox,-check-failure"
-             description="Performs static analysis, runs the tests, and generates project documentation"/>
-    <!--
-    <target name="full-build"
-                depends="prepare,phpunit,-check-failure"
-                description="Performs static analysis, runs the tests, and generates project documentation"/>
+    <!--<target name="full-build"
+            depends="prepare,static-analysis,phpunit,phpdox,-check-failure"
+            description="Performs static analysis, runs the tests, and generates project documentation"/>
     -->
+    <target name="full-build"
+            depends="prepare,phpcs,-check-failure"
+            description="Performs static analysis, runs the tests, and generates project documentation"/>
+    
     <target name="full-build-parallel"
             depends="prepare,static-analysis-parallel,phpunit,phpdox,-check-failure"
             description="Performs static analysis (executing the tools in parallel), runs the tests, and generates project documentation"/>
@@ -176,7 +176,8 @@
             unless="phpcs.done"
             description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
         <exec executable="${phpcs}" taskname="phpcs">
-            <arg value="--standard=PSR2" />
+            <!--<arg value="- -standard=PSR2" /> -->
+            <arg value="--standard=${basedir}/ruleset.xml" />
             <arg value="--extensions=php" />
             <arg value="--ignore=autoload.php" />
             <arg path="${basedir}/src" />
@@ -269,4 +270,3 @@
         </fail>
     </target>
 </project>
-

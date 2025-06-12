@@ -1,5 +1,4 @@
 <?php
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,7 +14,8 @@
 /**
  * This is the main pattern used for const across the project
  */
-class BWCFWDecoratorPattern {
+class BWCFWDecoratorPattern
+{
 
     private $server_base;
 
@@ -76,7 +76,8 @@ class BWCFWDecoratorPattern {
      * 
      * @return string This gets the internal variable
      */
-    function getBaseURL() {
+    function getBaseURL()
+    {
         return $this->baseurl;
     }
 
@@ -84,7 +85,8 @@ class BWCFWDecoratorPattern {
      * 
      * @param string $value This sets the internal variable
      */
-    function setBaseURL($value) {
+    function setBaseURL($value)
+    {
         $this->baseurl = $value;
     }
 
@@ -92,7 +94,8 @@ class BWCFWDecoratorPattern {
      * 
      * @return string This gets the internal variable
      */
-    function getBaseURLInternal() {
+    function getBaseURLInternal()
+    {
         return $this->baseurlinternal;
     }
 
@@ -100,7 +103,8 @@ class BWCFWDecoratorPattern {
      * 
      * @param string $value This sets the internal variable
      */
-    function setBaseURLInternal($value) {
+    function setBaseURLInternal($value)
+    {
         $this->baseurlinternal = $value;
     }
 
@@ -108,7 +112,8 @@ class BWCFWDecoratorPattern {
      * 
      * @return string This gets the internal variable
      */
-    function getHomeURL() {
+    function getHomeURL()
+    {
         return $this->homeURL;
     }
 
@@ -116,7 +121,8 @@ class BWCFWDecoratorPattern {
      * 
      * @param string $value This sets the internal variable
      */
-    function setHomeURL($value) {
+    function setHomeURL($value)
+    {
         $this->homeURL = $value;
     }
 
@@ -124,7 +130,8 @@ class BWCFWDecoratorPattern {
      * 
      * @return string This gets the internal variable
      */
-    function getLongName() {
+    function getLongName()
+    {
         return $this->longname;
     }
 
@@ -132,7 +139,8 @@ class BWCFWDecoratorPattern {
      * 
      * @param string $value This sets the internal variable
      */
-    function setLongName($value) {
+    function setLongName($value)
+    {
         $this->longname = $value;
     }
 
@@ -140,7 +148,8 @@ class BWCFWDecoratorPattern {
      * 
      * @return string This gets the internal variable
      */
-    function getShortName() {
+    function getShortName()
+    {
         return $this->ShortName;
     }
 
@@ -148,7 +157,8 @@ class BWCFWDecoratorPattern {
      * 
      * @param string $value This sets the internal variable
      */
-    function setShortName($value) {
+    function setShortName($value)
+    {
         $this->ShortName = $value;
     }
 
@@ -156,7 +166,8 @@ class BWCFWDecoratorPattern {
      * 
      * @return string This gets the internal variable
      */
-    function getAdmineMail() {
+    function getAdmineMail()
+    {
         return $this->adminemail;
     }
 
@@ -164,7 +175,8 @@ class BWCFWDecoratorPattern {
      * 
      * @param string $value This sets the internal variable
      */
-    function setAdmineMail($value) {
+    function setAdmineMail($value)
+    {
         $this->adminemail = $value;
     }
 
@@ -172,7 +184,8 @@ class BWCFWDecoratorPattern {
      * 
      * @return string This gets the internal variable
      */
-    function getSiteTitle() {
+    function getSiteTitle()
+    {
         return $this->sitetitle;
     }
 
@@ -180,7 +193,8 @@ class BWCFWDecoratorPattern {
      * 
      * @param string $value This sets the internal variable
      */
-    function setSiteTitle($value) {
+    function setSiteTitle($value)
+    {
         $this->sitetitle = $value;
     }
 
@@ -188,7 +202,8 @@ class BWCFWDecoratorPattern {
      * 
      * @return string This returns the file base for where all files are located
      */
-    function getServerBase() {
+    function getServerBase()
+    {
         return $this->server_base;
     }
 
@@ -196,7 +211,8 @@ class BWCFWDecoratorPattern {
      * 
      * @return string the suffix of the logging path
      */
-    function getLogPath() {
+    function getLogPath()
+    {
         return $this->log_path;
     }
 
@@ -204,7 +220,8 @@ class BWCFWDecoratorPattern {
      * 
      * @return String Footer copyright
      */
-    function getFooterCopy() {
+    function getFooterCopy()
+    {
         return $this->footer_copy;
     }
 
@@ -212,7 +229,8 @@ class BWCFWDecoratorPattern {
      * 
      * @param string $config
      */
-    function setConfigPath($config) {
+    function setConfigPath($config)
+    {
         $this->config_path = $config;
     }
 
@@ -220,7 +238,8 @@ class BWCFWDecoratorPattern {
      * 
      * @return string
      */
-    function getConfigPath() {
+    function getConfigPath()
+    {
         return $this->config_path;
     }
 
@@ -228,7 +247,8 @@ class BWCFWDecoratorPattern {
      * 
      * @param string $php_min
      */
-    function setPHPMinVersion($php_min) {
+    function setPHPMinVersion($php_min)
+    {
         $this->php_min = $php_min;
     }
 
@@ -236,7 +256,8 @@ class BWCFWDecoratorPattern {
      * 
      * @param string $php_max
      */
-    function setPHPMaxVersion($php_max) {
+    function setPHPMaxVersion($php_max)
+    {
         $this->php_max = $php_max;
     }
 
@@ -244,7 +265,8 @@ class BWCFWDecoratorPattern {
      * 
      * @return string
      */
-    function getPHPMinVersion() {
+    function getPHPMinVersion()
+    {
         return $this->php_min;
     }
 
@@ -252,14 +274,16 @@ class BWCFWDecoratorPattern {
      * 
      * @return string
      */
-    function getPHPMaxVersion() {
+    function getPHPMaxVersion()
+    {
         return $this->php_max;
     }
 
     /**
      * Main constructor function
      */
-    function __construct() {
+    function __construct()
+    {
         date_default_timezone_set('Africa/Johannesburg');
         $server_base = filter_input(INPUT_SERVER, 'DOCUMENT_ROOT');
         var_dump($server_base);
@@ -284,10 +308,10 @@ class BWCFWDecoratorPattern {
         $this->setShortName($json_a["application"]["shortname"]);
         $this->setSiteTitle($json_a["application"]["sitetitle"]);
     }
-
 }
 
-class DBVO {
+class DBVO
+{
 
     /**
      *
@@ -333,63 +357,78 @@ class DBVO {
      */
     private $charset = "utf8";
 
-    function getUserName() {
+    function getUserName()
+    {
         return $this->username;
     }
 
-    function getPassword() {
+    function getPassword()
+    {
         return $this->password;
     }
 
-    function getHost() {
+    function getHost()
+    {
         return $this->host;
     }
 
-    function getPort() {
+    function getPort()
+    {
         return $this->port;
     }
 
-    function getDatabase() {
+    function getDatabase()
+    {
         return $this->database;
     }
 
-    function getDataBaseOptions() {
+    function getDataBaseOptions()
+    {
         return $this->options;
     }
 
-    function getCharset() {
+    function getCharset()
+    {
         return $this->charset;
     }
 
-    function setUsername($username) {
+    function setUsername($username)
+    {
         $this->username = $username;
     }
 
-    function setPassword($password) {
+    function setPassword($password)
+    {
         $this->password = $password;
     }
 
-    function setHost($host) {
+    function setHost($host)
+    {
         $this->host = $host;
     }
 
-    function setPort($port) {
+    function setPort($port)
+    {
         $this->port = $port;
     }
 
-    function setDatabase($database) {
+    function setDatabase($database)
+    {
         $this->database = $database;
     }
 
-    function setOptions($options) {
+    function setOptions($options)
+    {
         $this->options = $options;
     }
 
-    function setCharset($charset) {
+    function setCharset($charset)
+    {
         $this->charset = $charset;
     }
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->server_base = filter_input(INPUT_SERVER, 'DOCUMENT_ROOT');
         $this->config_path = $this->server_base . "/../config/";
         $string = file_get_contents($this->config_path . "settings.json");
@@ -400,13 +439,13 @@ class DBVO {
         $this->setHost($json_a["DBVO"]["host"]);
         $this->setPort($json_a["DBVO"]["port"]);
     }
-
 }
 
 /**
  * 
  */
-class LoggingService extends BWCFWDecoratorPattern {
+class LoggingService extends BWCFWDecoratorPattern
+{
 
     /**
      *
@@ -435,7 +474,8 @@ class LoggingService extends BWCFWDecoratorPattern {
     /**
      * 
      */
-    public function LogEntry($level) {
+    public function LogEntry($level)
+    {
         switch ($level) {
             case 1:
                 /* info */
@@ -470,7 +510,8 @@ class LoggingService extends BWCFWDecoratorPattern {
     /**
      * This starts up the logging sub section
      */
-    public function __construct($fn = FALSE, $isSystemLevel = FALSE, $isEnableDAO = TRUE) {
+    public function __construct($fn = FALSE, $isSystemLevel = FALSE, $isEnableDAO = TRUE)
+    {
         parent::__construct();
         require_once('../vendor/log4php/Logger.php');
         Logger::configure(array(
@@ -501,7 +542,6 @@ class LoggingService extends BWCFWDecoratorPattern {
         $this->DAO_Service = new DAO_Service($isEnableDAO);
         $this->page_metric = new audit_handover();
     }
-
 }
 
 include_once 'bwcfw.classes.valueobjects.php';
